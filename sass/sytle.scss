@@ -1,0 +1,82 @@
+$Blue-200: hsl(224, 100%, 95%);
+$Blue-400: hsl(220, 100%, 64%);
+$Blue-600: hsl(228, 100%, 60%);
+$Blue-700: hsl(228, 99%, 58%);
+$Black: hsl(0, 0%, 0%);
+$grid:grid;
+$space-20:20px;
+// font-size 17 and 14 for desc,nav,footer
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+a{
+    text-decoration: none;
+    color: initial;
+}
+button{
+    border: none;
+    background-color: initial;
+}
+body{
+    background-color: $Blue-700;
+    color: $Blue-200;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid red;
+    font-size: 14px;
+}
+header{
+    margin-inline:  $space-20;
+    margin-block-start: $space-20;
+    ul{
+        list-style: none;
+    display: $grid;
+    grid-template-columns: repeat(2,6fr);
+    li{
+        a::before{
+            content: ""; /*problem show nahi ho raha */
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    }
+    li:last-child{
+        justify-self: end;
+    }
+   ul{
+       display: none;
+   }
+ }   
+}
+main{
+ margin: 0 $space-20;
+    h1{
+        color:#fff;
+        line-height: 0.9;
+    }   
+    p{
+        line-height: 1.5;
+        font-size: 14px;
+    }
+}
+.stat{
+    border: 1px solid red;
+    display: $grid;
+    grid-template-rows: auto auto;
+    align-content: space-between;
+    height: 300px;
+    .stat-heading{
+        display: $grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+
+}
+}
+footer{
+    margin: 0 $space-20;
+}
