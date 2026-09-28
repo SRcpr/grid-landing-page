@@ -2,10 +2,17 @@ $Blue-200: hsl(224, 100%, 95%);
 $Blue-400: hsl(220, 100%, 64%);
 $Blue-600: hsl(228, 100%, 60%);
 $Blue-700: hsl(228, 99%, 58%);
+$White: hsl(0, 0%, 100%);
 $Black: hsl(0, 0%, 0%);
-$grid:grid;
-$space-20:20px;
+
 // font-size 17 and 14 for desc,nav,footer
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/font/inter/inter-variable.ttf') format('truetype');
+  font-weight: 100 900; /* Kyunki yeh variable font hai, toh yeh 100 se 900 tak saare weights support karta hai */
+  font-style: normal;
+  font-display: swap;
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -14,69 +21,142 @@ $space-20:20px;
 }
 a{
     text-decoration: none;
-    color: initial;
+    color: inherit;
 }
 button{
     border: none;
     background-color: initial;
+    cursor: pointer;
+}
+h1,h2{
+color: $White;
+}
+ul{
+    list-style: none;
 }
 body{
     background-color: $Blue-700;
     color: $Blue-200;
-    max-width: 320px;
+    max-width: 375px;
     width: 100%;
     margin: 0 auto;
-    border: 1px solid red;
-    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px; 
+    font-weight: 400; 
 }
-header{
-    margin-inline:  $space-20;
-    margin-block-start: $space-20;
-    ul{
-        list-style: none;
-    display: $grid;
-    grid-template-columns: repeat(2,6fr);
-    li{
-        a::before{
-            content: ""; /*problem show nahi ho raha */
-            width: 50px;
-            height: 50px;
-            background-color: #fff;
+
+
+
+.nav-link, 
+.stat-desc, 
+footer {
+  font-size: 14px;
+}
+
+
+.nav-img.hide{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+// start css
+.head-section{
+    padding: 20px 24px;
+    border-bottom: 1px solid red;
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nav-link.brand::before{
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
             border-radius: 50%;
+            background-color:$White;
+        }
+        .nav-list{
+            .show{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 72px;
+                padding: 88px;
+                background-color: red;
+                display: flex!important;
+                gap: 16px;
+                flex-direction: column;
+            }
+            .show{
+                .nav-link{
+                    font-weight: 500;
+                    font-size: 17px;
+                    &:hover{
+                    text-decoration: underline;
+                }
+                }
+                
+            }
+            .mobile-menu{
+                display: none;
+            }
         }
     }
-    li:last-child{
-        justify-self: end;
-    }
-   ul{
-       display: none;
-   }
- }   
+    
 }
-main{
- margin: 0 $space-20;
-    h1{
-        color:#fff;
-        line-height: 0.9;
-    }   
-    p{
-        line-height: 1.5;
-        font-size: 14px;
+
+
+.main-section{
+    .hero{
+        padding-bottom: 56px;
+        border-bottom: 1px solid red;
+        h1{
+            padding: 64px 24px 0px 32px;
+            letter-spacing: 3px;
+        }
+        p{
+            padding: 32px 40px 0px 32px;
+            line-height: 1.7;
+            letter-spacing: 0.5px;
+        }
     }
-}
-.stat{
-    border: 1px solid red;
-    display: $grid;
-    grid-template-rows: auto auto;
-    align-content: space-between;
-    height: 300px;
-    .stat-heading{
-        display: $grid;
-        grid-template-columns: auto auto;
-        justify-content: space-between;
+    
+    
+    .stat-section{
+        .stat{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0px 24px 0px 24px;
+            border-bottom: 1px solid pink;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .stat-head{
+            padding: 0px 0px 100px 0px;
+            h2{
+                font-size: 36px;
+                padding-top: 16px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .stat-desc{
+            padding: 106px 0px 28px 0px;
+            .heading{
+                font-size: 17px;
+                color: $White;
+            }
+        }
+    }
 
 }
-}
 footer{
-    margin: 0 $space-20;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 24px;   
 }

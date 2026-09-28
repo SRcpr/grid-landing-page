@@ -13,11 +13,10 @@ const mobileMenu = document.getElementById("mobile-menu");
 hamburgerImage.addEventListener("click", () => {
   hamburgerImage.classList.add("hide");
   closeButton.classList.remove("hide");
-  mobileMenu.classList.add("flex");
-  // mobileMenu.classList.remove("hide");
+  mobileMenu.classList.add("show");
 });
 closeButton.addEventListener("click", () => {
   hamburgerImage.classList.remove("hide");
   closeButton.classList.add("hide");
-  mobileMenu.classList.remove("flex");
+  mobileMenu.classList.remove("show");
 });
