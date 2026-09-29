@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Inter";
-  src: url("../assets/font/inter/inter-variable.ttf") format("truetype");
+  src: url("/assets/fonts/inter/inter-variable.ttf") format("truetype");
   font-weight: 100 900; /* Kyunki yeh variable font hai, toh yeh 100 se 900 tak saare weights support karta hai */
   font-style: normal;
   font-display: swap;
@@ -40,11 +40,31 @@ body {
   font-size: 17px;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  body {
+    max-width: 991px;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    max-width: 1199px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    max-width: 1500px;
+  }
+}
 
 .nav-link,
 .stat-desc,
 footer {
   font-size: 14px;
+}
+
+.overlay {
+  background-color: hsl(0, 0%, 0%);
+  opacity: 0.25;
 }
 
 .nav-img.hide {
@@ -57,7 +77,12 @@ footer {
 
 .head-section {
   padding: 20px 24px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid hsl(220, 100%, 64%);
+}
+@media (min-width: 1200px) {
+  .head-section {
+    padding: 20px 48px;
+  }
 }
 .head-section .nav {
   display: flex;
@@ -79,7 +104,7 @@ footer {
   right: 0;
   top: 72px;
   padding: 88px;
-  background-color: red;
+  background-color: hsl(228, 100%, 60%);
   display: flex !important;
   gap: 16px;
   flex-direction: column;
@@ -91,32 +116,117 @@ footer {
 .head-section .nav .nav-list .show .nav-link:hover {
   text-decoration: underline;
 }
+@media (min-width: 1200px) {
+  .head-section .nav .nav-list .show {
+    background-color: hsl(228, 100%, 60%);
+    left: unset;
+    bottom: 0;
+    padding: 64px 40px 0 248px;
+    z-index: 100;
+  }
+}
 .head-section .nav .nav-list .mobile-menu {
   display: none;
 }
+@media (min-width: 768px) {
+  .head-section .nav .nav-list .mobile-menu {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}
+@media (min-width: 1200px) {
+  .head-section .nav .nav-list .mobile-menu {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}
 
+@media (min-width: 768px) {
+  .main-section {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid hsl(220, 100%, 64%);
+  }
+}
+@media (min-width: 992px) {
+  .main-section {
+    max-width: 1199px;
+  }
+}
+@media (min-width: 1200px) {
+  .main-section {
+    max-width: 1500px;
+  }
+}
 .main-section .hero {
   padding-bottom: 56px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid hsl(220, 100%, 64%);
+}
+@media (min-width: 768px) {
+  .main-section .hero {
+    border-bottom: unset;
+  }
 }
 .main-section .hero h1 {
-  padding: 64px 24px 0px 32px;
+  padding: 64px 216px 0px 32px;
   letter-spacing: 3px;
 }
+@media (min-width: 1200px) {
+  .main-section .hero h1 {
+    font-size: 48px;
+    padding: 64px 216px 0px 48px;
+  }
+}
 .main-section .hero p {
-  padding: 32px 40px 0px 32px;
   line-height: 1.7;
+  padding: 32px 40px 0px 32px;
   letter-spacing: 0.5px;
+}
+@media (min-width: 1200px) {
+  .main-section .hero p {
+    padding: 48px 176px 0px 48px;
+  }
+}
+@media (min-width: 768px) {
+  .main-section .hero {
+    flex: 1;
+  }
+}
+@media (min-width: 992px) {
+  .main-section .hero {
+    max-width: 1199px;
+  }
+}
+@media (min-width: 1200px) {
+  .main-section .hero {
+    max-width: 1500px;
+  }
+}
+@media (min-width: 768px) {
+  .main-section .stat-section {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 }
 .main-section .stat-section .stat {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: stretch;
   padding: 0px 24px 0px 24px;
-  border-bottom: 1px solid pink;
+  border-bottom: 1px solid hsl(220, 100%, 64%);
 }
 .main-section .stat-section .stat:hover {
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .main-section .stat-section .stat {
+    border-left: 1px solid hsl(220, 100%, 64%);
+  }
+  .main-section .stat-section .stat:nth-child(3), .main-section .stat-section .stat:nth-child(4) {
+    border-bottom: none;
+  }
 }
 .main-section .stat-section .stat-head {
   padding: 0px 0px 100px 0px;
@@ -134,10 +244,15 @@ footer {
   font-size: 17px;
   color: hsl(0, 0%, 100%);
 }
-
 footer {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 20px 24px;
+}
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }/*# sourceMappingURL=sytle.css.map */
