@@ -30,17 +30,30 @@ p{
 .nav,footer>p,.stat-des.desc{
     font-size: 14px;
 }
+h1{
+    font-size: clamp(40px, 34.3662px + 1.5023vw, 56px);
+    color: $White;
+}
+
 button{
     border: none;
     background-color: inherit;
     cursor: pointer;
 }
+.show{
+    display: flex!important;
+}
+.overlay{
+    background-color: $Black;
+    opacity: 0.25;
+}
 body{
     background-color: $Blue-700;
     font-family: 'Inter', sans-serif;
+    color: $Blue-200;
 }
 .head-section{
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid $Blue-400;
     .navbar{
         padding: 24px 24px;
         .nav{
@@ -49,15 +62,30 @@ body{
             align-items: center;
             list-style: none;
         }
-        .nav.mobile-menu,.hide{
+        .hide{
             display: none;
+        }
+        
+        .nav.mobile-menu{
+            background-color: $Blue-600;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 76px;
+            font-size: 32px;
+            font-weight: 500;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            padding: 45px 0;
+            z-index: 100;
         }
         .nav-link.brand::before{
             content: "";
             display: inline-block;
             width: 12px;
             height: 12px;
-            background-color: red;
+            background-color:$White;
             border-radius: 50%;
             margin-right: 8px;
         }
@@ -65,7 +93,17 @@ body{
     @include breakpoint.respond-to("tablet"){
         .navbar{
             padding: 24px 48px;;
+        .nav.mobile-menu{
+            background-color: $Blue-600;
+            left: unset;
+            min-height: 100vh;
+            justify-content: flex-start;
+            padding: 48px 96px;
+            
         }
+        
+        }
+        
     }
 
 }
@@ -77,10 +115,8 @@ body{
         display: flex;
         flex-direction: column;
         gap: 28px;
-        border-bottom: 1px solid red;
-        h1{
-            font-size: 40px;
-        }
+        border-bottom: 1px solid $Blue-400;
+        
         p{
             line-height: 1.6;
         }
@@ -89,11 +125,11 @@ body{
         .stat{
             padding: 0px 20px;
             display: flex;
-            gap: 180px;
+            gap: 72px;
             flex-direction: column;
-            border-bottom: 1px solid red;
+            border-bottom: 1px solid $Blue-400;
             .stat-head>h2{
-                font-size: 36px;
+                color: $White;
                 display: flex;
                 padding-top:20px ;
                 justify-content: space-between;
@@ -102,6 +138,9 @@ body{
                 padding-bottom: 12px;
                 padding-top: 8px;
                 line-height: 1.4;
+                .heading{
+                    color:$White;
+                }
             }
             
         }
@@ -111,14 +150,13 @@ body{
     }
     @include breakpoint.respond-to("tablet"){
         flex-direction: row;
-        border-bottom: 1px solid red;
+        border-bottom: 1px solid $Blue-400;
         .hero{
             flex:1;
             padding: 52px 48px;
             justify-content: center;
             border-bottom: none;
             h1{
-                font-size: 56px;
                 letter-spacing: 8px;
             }
         }
@@ -128,7 +166,7 @@ body{
             grid-template-columns: repeat(2,1fr);
             .stat{
                 padding: 0px 32px;
-                border-left: 1px solid red;
+                border-left: 1px solid $Blue-400;
                 &:nth-child(3),&:nth-child(4){
                     border-bottom: none;
                 }
